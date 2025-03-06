@@ -1,1 +1,111 @@
-Hello World
+<html>
+  <head> </head>
+  <body onLoad="init()">
+    <h1>Greenwich Hire-a-Teen</h1>
+
+    <table id="main_table">
+      <tr>
+        <td>
+          Hire-a-teen was developed by a high school student in search of job.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button>Babysitting</button>
+          <button>Tutoring</button>
+          <button>Yardwork</button>
+          <button>Sports Skills</button>
+          <button>Snow Shoveling</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table id="profiles"></table>
+        </td>
+      </tr>
+      <tr></tr>
+    </table>
+    <script>
+      const PROFILES = [
+        {
+          name: "Sam Skuratovsky",
+          photo: null,
+          quick_info: "Greenwich High School - 9th Grade",
+          about_me:
+            "This is some information about me.  I am really good at Math so I can tutor kids.  I am also on the 9th grade freshman basketball team and I've taught kids basketball.",
+          available_for:
+            "Tutoring: Math, Spanish<br/>Sports: Basketball, Football",
+          contact: "Text me at 203-969-4261",
+        },
+        {
+          name: "Allison Skuratovsky",
+          photo: null,
+          quick_info: "Greenwich High School - 9th Grade",
+          about_me:
+            "This is some information about me.  I am really good at Math so I can tutor kids.  I am also on the 9th grade freshman basketball team and I've taught kids basketball.",
+          available_for:
+            "Tutoring: Math, Spanish<br/>Sports: Basketball, Football",
+          contact: "Text me at 203-969-4261",
+        },
+        {
+          name: "Kaitlyn Skuratovsky",
+          quick_info: "Greenwich High School - 9th Grade",
+          photo: null,
+          about_me:
+            "This is some information about me.  I am really good at Math so I can tutor kids.  I am also on the 9th grade freshman basketball team and I've taught kids basketball.",
+          available_for:
+            "Tutoring: Math, Spanish<br/>Sports: Basketball, Football",
+          contact: "Text me at 203-969-4261",
+        },
+        {
+          name: "Nate Pardo",
+          quick_info: "Greenwich High School - 9th Grade",
+          photo: null,
+          about_me:
+            "This is some information about me.  I am really good at Math so I can tutor kids.  I am also on the 9th grade freshman basketball team and I've taught kids basketball.",
+          available_for:
+            "Tutoring: Math, Spanish<br/>Sports: Basketball, Football",
+          contact: "Text me at 203-969-4261",
+        },
+      ];
+
+      function init() {
+        const table = document.getElementById("profiles");
+        for (profile of PROFILES) {
+          const row = document.createElement("tr");
+          row.style.backgroundColor = "silver";
+          row.innerHTML = `
+            <td height="100" width="100" style="border:1px solid black; vertical-align:top;align:center; padding-top:12px">
+              [Picture Here]<br/>
+              ${profile.quick_info}
+            </td>
+            <td style="vertical-align:top; padding:10px">
+              <h2>${profile.name}</h2>
+              <table border="0">
+                <tr>
+                  <td>
+                  <b>About Me</b><br/>
+                  ${profile.about_me}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <b>Available For</b><br/>
+                  ${profile.available_for}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                  <b>Contact Information</b><br/>
+                  ${profile.contact}
+                  </td>
+                </tr>
+              </table>
+            </td>
+        `;
+          table.appendChild(row);
+        }
+      }
+    </script>
+  </body>
+</html>
